@@ -21,7 +21,7 @@ set LOGPATH=%SystemDrive%\logs
 set LOGFILE=%COMPUTERNAME%_Mozilla_Thunderbird_x86_install.log
 
 :: Package to install. Do not use trailing slashes (\)
-set BINARY=C:\Scripts\Thunderbird.exe
+set BINARY=C:\Scripts\TB60.exe
 set FLAGS=/INI="C:\Scripts\Thunderbird_settings.ini"
 
 :: Create the log directory if it doesn't exist
@@ -56,7 +56,7 @@ echo %CUR_DATE% %TIME% Finishing configuration and cleaning up...>> "%LOGPATH%\%
 :: Neither of these contain any settings, they simply redirect Thunderbird to use our settings file on the server. 
 
 :: 64-bit version
-if exist "%ProgramFiles(x86)%\Mozilla Thunderbird\" copy /Y "C:\Scripts\thunderbird-global-settings.js" "%ProgramFiles(x86)%\Mozilla Thunderbird\"
+if exist "%ProgramFiles(x86)%\Mozilla Thunderbird\" copy /Y "C:\Scripts\channel-prefs.js" "%ProgramFiles(x86)%\Mozilla Thunderbird\defaults\pref\"
 :: if exist "%ProgramFiles(x86)%\Mozilla Thunderbird\" copy /Y "%~dp0thunderbird-custom-user-settings.js" "%ProgramFiles(x86)%\Mozilla Thunderbird\defaults\pref"
 
 echo %CUR_DATE% %TIME% Done.
